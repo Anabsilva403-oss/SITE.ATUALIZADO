@@ -1,82 +1,183 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Ana Beatriz | Perfil</title>
-    <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
+/* --- CONFIGURAÇÕES DE CORES E VARIÁVEIS --- */
+:root {
+    --primary-blue: #a2c2e1; /* Azul pastel suave */
+    --dark-blue: #4a6fa5;    /* Azul escuro para títulos */
+    --soft-white: #f8fafd;   /* Fundo quase branco levemente azulado */
+    --text-main: #334155;    /* Cor do texto para leitura */
+    --accent: #cbd5e1;       /* Cor de linhas e detalhes */
+}
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">ANA <span>B.</span></div> <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#sobre">Euuu</a></li>
-                <li><a href="#momentos">Momentos</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-            </ul>
-        </div>
-    </nav>
+/* --- RESET: Remove margens chatas que vêm no navegador --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <header id="home" class="hero-section">
-    <img src="img/momentos!!.jpg" alt="Banner Ana Beatriz" class="banner-img">
-</header>
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-main);
+    background-color: var(--soft-white);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Faz a rolagem do menu ser suave */
+}
 
-    <main class="main-content">
-        
-        <section id="sobre" class="section-container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="img/eu!!!.jpg" alt="Foto Ana Beatriz">
-                </div>
-                <div class="about-info">
-                    <h2 class="section-title">Um pouco sobre mim!?</h2>
-                    <p>Bom, eu sou uma menina bem esforçada, tenho 16 anos e faço aniversário no dia 12/07. Muita gente me chama de Constantino ou até Constância, mas meu nome mesmo é Ana Beatriz Constantino da Silva. Trabalho como CLT na Ultra Popular.
+/* --- NAVBAR: Configura o menu fixo no topo --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.9); /* Branco com transparência */
+    backdrop-filter: blur(5px);          /* Efeito de vidro embaçado */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--accent);
+}
 
-Eu amo passar tempo com a minha família. Tenho um irmão de 14 anos.
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-Também adoro ficar com meus amigos, dar risada e aproveitar os momentos com eles. Desde pequena eu tenho um sonho muito especial, que é ser médica e me formar em pediatria. (Mas confesso que quando eu era criança eu queria ser caixa de supermercado kkkkk).
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-Eu também frequento a igreja, não tenho uma fixa pra ir todo final de semana, mas é algo que faz parte da minha vida e da minha rotina.
+.nav-logo span { color: var(--primary-blue); }
 
-Sou bem dedicada, valorizo muito as pessoas que amo e tô sempre correndo atrás dos meus sonhos. 
-                     </p>
-        </section>
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
 
-        <section id="momentos" class="gallery-section">
-            <h2 class="section-title center">Galeria de Momentos</h2>
-            <div class="gallery-grid">
-                <div class="photo-card"><img src="img/Amigos momentos 1.jpg" alt="Momento 1"></div>
-                <div class="photo-card"><img src="img/Amigos momentos 2 (1).jpg" alt="Momento 2"></div>
-                <div class="photo-card"><img src="img/Amigos momentos 3 (1).jpg" alt="Momento 3"></div>
-                <div class="photo-card"><img src="img/Amigos momentos 4 (1).jpg" alt="Momento 4"></div>
-            </div>
-        </section>
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: 0.3s;
+}
 
-        <section id="hobbies" class="section-container">
-            <h2 class="section-title center">Meus Favoritos</h2>
-            <div class="hobbies-flex">
-                <div class="hobby-card">
-                    <h3>🎬 Filmes / Series:</h3>
-                    <p>Vampire Diaries,
-                     Stranger Things,
-                    10 Coisas que eu Odeio em Você.</p>
-                </div>
-                <div class="hobby-card">
-                    <h3>🍝 Culinarias favoritas:</h3>
-                    <p>Lasanha da minha mãe, rissoto,strogonoff de carne e etc... </p>
-                </div>
-                <div class="hobby-card">
-                    <h3>🎶 Cantores Favoritos:</h3>
-                    <p>Luan Santana, Henrique & Juliano e Jorge & Mateus</p>
-                </div>
-            </div>
-        </section>
+.nav-links a:hover { color: var(--primary-blue); }
 
-    </main>
+/* --- HERO: O banner de entrada do site --- */
+.hero-section {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-    <footer class="footer">
-        <p>&copy; 2026 Ana Beatriz Constantino da Silva</p>
-    </footer>
+}
 
-</body>
-</html>
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1e293b;
+}
+
+/* --- LAYOUT SOBRE: Alinhamento da foto e texto --- */
+.section-container {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Foto menor, texto maior */
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 15px 15px 0 var(--primary-blue); /* Sombra sólida decorativa */
+}
+
+/* --- GALERIA: Mural de fotos organizado --- */
+.gallery-section {
+    background: #fff;
+    padding: 80px 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Fotos se ajustam sozinhas */
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.photo-card {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o quadrado sem esticar */
+    transition: transform 0.5s;
+}
+
+.photo-card:hover img { transform: scale(1.05); } /* Efeito de zoom ao passar o mouse */
+
+/* --- HOBBIES: Cards flexíveis --- */
+.hobbies-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hobby-card {
+    background: #fff;
+    flex: 1 1 300px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #edf2f7;
+    transition: 0.3s;
+}
+
+.hobby-card:hover { transform: translateY(-5px); }
+
+/* --- FOOTER: Estilo do rodapé --- */
+.footer {
+    padding: 40px;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid var(--accent);
+    color: #94a3b8;
+}
+
+/* --- RESPONSIVIDADE: Ajustes para celular --- */
+@media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; text-align: center; } /* Foto em cima do texto */
+    .nav-links { display: none; } /* Esconde o menu em telas muito pequenas */
+}
+/* Faz a imagem do HTML ocupar o fundo do banner corretamente */
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que não estique a foto */
+    z-index: -1;        /* Joga a imagem para trás do texto */
+}
+
+.hero-section {
+    position: relative; /* Necessário para a imagem acima funcionar */
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
